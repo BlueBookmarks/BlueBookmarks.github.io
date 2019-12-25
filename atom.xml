@@ -1,20 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>蓝书签</title>
+  <title>书签</title>
   <icon>https://www.gravatar.com/avatar/ebb1c0f6d87bbf86032ee7617472721c</icon>
-  <subtitle>博客</subtitle>
+  <subtitle>一个咸鱼到菜鸡的经历</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://bluebookmarks.github.io/"/>
-  <updated>2019-12-25T03:00:28.541Z</updated>
+  <updated>2019-12-25T09:22:17.055Z</updated>
   <id>https://bluebookmarks.github.io/</id>
   
   <author>
-    <name>杨耀</name>
+    <name>在下AKK</name>
     <email>1051347984@qq.com</email>
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vscode插件整理</title>
+    <link href="https://bluebookmarks.github.io/2019/12/25/vscode%E6%8F%92%E4%BB%B6%E6%95%B4%E7%90%86/"/>
+    <id>https://bluebookmarks.github.io/2019/12/25/vscode%E6%8F%92%E4%BB%B6%E6%95%B4%E7%90%86/</id>
+    <published>2019-12-25T08:22:09.000Z</published>
+    <updated>2019-12-25T09:22:17.055Z</updated>
+    
+    <content type="html"><![CDATA[<p>一个完美的编辑器插件可以帮助程序猿快出写出BUG而且表面看不出问题来 ๑乛◡乛๑     —— 在下AKK</p><a id="more"></a><p>整理一下我常用的vscode插件</p><hr><h2 id="基础类"><a href="#基础类" class="headerlink" title="基础类"></a>基础类</h2><h3 id="Auto-Close-Tag"><a href="#Auto-Close-Tag" class="headerlink" title="Auto Close Tag"></a>Auto Close Tag</h3><p>自动闭合标签，提升效率的利器，react，vue亲测可用</p><h3 id="Auto-Rename-Tag"><a href="#Auto-Rename-Tag" class="headerlink" title="Auto Rename Tag"></a>Auto Rename Tag</h3><p>改变标签时，自动改变对应的开始闭合标签，不用找过来找过去</p><h3 id="Code-Runner"><a href="#Code-Runner" class="headerlink" title="Code Runner"></a>Code Runner</h3><p>无需html也可以运行js，ts。还可以运行node，java，python，php…代码（需要对应的环境）</p><h3 id="Code-Spell-Checker"><a href="#Code-Spell-Checker" class="headerlink" title="Code Spell Checker"></a>Code Spell Checker</h3><p>代码英文检测，助你写出正确的英文命名变量（例：写出frist会标出错误，并提供正确的修复）</p><h3 id="Color-Info"><a href="#Color-Info" class="headerlink" title="Color Info"></a>Color Info</h3><p>在颜色光标上悬停可出现色彩模型</p><h3 id="ESLint"><a href="#ESLint" class="headerlink" title="ESLint"></a>ESLint</h3><p>eslint检测，可以帮助你写出符合团队规范的代码</p><h3 id="filesize"><a href="#filesize" class="headerlink" title="filesize"></a>filesize</h3><p>查看你代码文件的大小</p><h3 id="GitLens-—-Git-supercharged"><a href="#GitLens-—-Git-supercharged" class="headerlink" title="GitLens — Git supercharged"></a>GitLens — Git supercharged</h3><p>非常重要的git插件，可以让你清楚的知道git上代码的提交历史，修改信息，操作人员（甩锅必备）</p><h3 id="HTML-CSS-Support"><a href="#HTML-CSS-Support" class="headerlink" title="HTML CSS Support"></a>HTML CSS Support</h3><p>html标签上写class智能提示项目所支持的样式</p><h3 id="HTML-Snippets"><a href="#HTML-Snippets" class="headerlink" title="HTML Snippets"></a>HTML Snippets</h3><p>H5代码片段以及提示</p><h3 id="Live-Server"><a href="#Live-Server" class="headerlink" title="Live Server"></a>Live Server</h3><p>可以开启本地服务器，方便调试</p><h3 id="markdownlint"><a href="#markdownlint" class="headerlink" title="markdownlint"></a>markdownlint</h3><p>markdown文件的规则检测，助你写出一份标准的markdown</p><h3 id="Path-Intellisense"><a href="#Path-Intellisense" class="headerlink" title="Path Intellisense"></a>Path Intellisense</h3><p>文件索引插件，帮助你快速写出正确的文件路径</p><h3 id="Prettier-Code-formatter"><a href="#Prettier-Code-formatter" class="headerlink" title="Prettier - Code formatter"></a>Prettier - Code formatter</h3><p>代码美化插件，一键美化</p><h3 id="px2vw"><a href="#px2vw" class="headerlink" title="px2vw"></a>px2vw</h3><p>一个自动把 px 单位转成 vw 单位的 VSCode 插件，写H5必备</p><h3 id="React-Native-Tools"><a href="#React-Native-Tools" class="headerlink" title="React Native Tools"></a>React Native Tools</h3><p>在vscode 上调试 React Native 的插件</p><h3 id="Settings-Sync"><a href="#Settings-Sync" class="headerlink" title="Settings Sync"></a>Settings Sync</h3><p>上传本地配置，插件列表到github上保存，即使更换电脑可以快速同步设置和插件（需要Github Token）</p><h3 id="stylelint"><a href="#stylelint" class="headerlink" title="stylelint"></a>stylelint</h3><p>检测css的规则，确保你写出的是正确和标准的CSS</p><h3 id="TSLint"><a href="#TSLint" class="headerlink" title="TSLint"></a>TSLint</h3><p>检测Ts的规则，助你写出标准的TS代码</p><hr><h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><h3 id="ES7-React-Redux-GraphQL-React-Native-snippets"><a href="#ES7-React-Redux-GraphQL-React-Native-snippets" class="headerlink" title="ES7 React/Redux/GraphQL/React-Native snippets"></a>ES7 React/Redux/GraphQL/React-Native snippets</h3><p>写 React/Redux/React-Native 时可以通过简写快速生成对应的模板</p><p><code>imr → import React from &#39;react&#39;</code></p><p><code>imrn → import { $1 } from &#39;react-native&#39;</code></p><hr><h2 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h2><h3 id="Vetur"><a href="#Vetur" class="headerlink" title="Vetur"></a>Vetur</h3><p>写vue必备，代码自动补全，错误提示，语法高亮</p><hr><h2 id="美化插件"><a href="#美化插件" class="headerlink" title="美化插件"></a>美化插件</h2><h3 id="文件图标类"><a href="#文件图标类" class="headerlink" title="文件图标类"></a>文件图标类</h3><ul><li><p>Material Icon Theme</p><p>扁平风的文件图标</p></li><li><p>vscode-icons</p><p>超级多的图标，可以自己定制</p></li></ul><h3 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h3><ul><li><p>Noctis</p><p>超级多的配色</p></li><li><p>One Dark Pro</p><p>很火的一个主题，深色主题 + 代码配色 很舒服</p></li></ul><hr><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="LeetCode"><a href="#LeetCode" class="headerlink" title="LeetCode"></a>LeetCode</h3><p>在 VS Code 中练习 LeetCode，闲来无事可以在vscode上刷算法题</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;一个完美的编辑器插件可以帮助程序猿快出写出BUG而且表面看不出问题来 ๑乛◡乛๑     —— 在下AKK&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="vscode" scheme="https://bluebookmarks.github.io/tags/vscode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vscode中调试typescript</title>
+    <link href="https://bluebookmarks.github.io/2019/12/25/vscode%E4%B8%AD%E8%B0%83%E8%AF%95typescript/"/>
+    <id>https://bluebookmarks.github.io/2019/12/25/vscode%E4%B8%AD%E8%B0%83%E8%AF%95typescript/</id>
+    <published>2019-12-25T07:38:31.000Z</published>
+    <updated>2019-12-25T07:47:12.544Z</updated>
+    
+    <content type="html"><![CDATA[<p>vscode中调试typescript</p><a id="more"></a><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul><li><a href="#依赖包">依赖包</a></li><li><a href="#配置tsconfigjson">配置tsconfig.json</a></li><li><a href="#配置launchjson">配置launch.json</a></li><li><a href="#开始调试">开始调试</a></li></ul><h2 id="依赖包"><a href="#依赖包" class="headerlink" title="依赖包"></a>依赖包</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; npm安装</span><br><span class="line">npm i typescript</span><br><span class="line">npm i ts-node</span><br><span class="line">&#x2F;&#x2F; yarn安装</span><br><span class="line">yarn add typescript</span><br><span class="line">yarn add ts-node</span><br></pre></td></tr></table></figure><h2 id="配置tsconfig-json"><a href="#配置tsconfig-json" class="headerlink" title="配置tsconfig.json"></a>配置tsconfig.json</h2><ul><li><p>初始化tsconfig.json</p><p><code>tsc --init</code></p></li><li><p>配置tsconfig.json</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"compilerOptions"</span>: &#123;</span><br><span class="line">    <span class="attr">"module"</span>: <span class="string">"commonjs"</span>,</span><br><span class="line">    <span class="attr">"target"</span>: <span class="string">"es5"</span>,</span><br><span class="line">    <span class="attr">"noImplicitAny"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"outDir"</span>: <span class="string">"./dist"</span>,</span><br><span class="line">    <span class="attr">"sourceMap"</span>: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"include"</span>: [</span><br><span class="line">    <span class="string">"src/**/*"</span></span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><h2 id="配置launch-json"><a href="#配置launch-json" class="headerlink" title="配置launch.json"></a>配置launch.json</h2><ul><li><p>打开调试 <code>alt + D</code></p></li><li><p>选择添加配置</p></li><li><p>编辑launch.json</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"version"</span>: <span class="string">"0.2.0"</span>,</span><br><span class="line">  <span class="attr">"configurations"</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"name"</span>: <span class="string">"Current TS File"</span>,</span><br><span class="line">      <span class="attr">"type"</span>: <span class="string">"node"</span>,</span><br><span class="line">      <span class="attr">"request"</span>: <span class="string">"launch"</span>,</span><br><span class="line">      <span class="attr">"program"</span>: <span class="string">"$&#123;workspaceRoot&#125;/node_modules/ts-node/dist/bin.js"</span>,</span><br><span class="line">      <span class="attr">"args"</span>: [</span><br><span class="line">          <span class="string">"$&#123;relativeFile&#125;"</span></span><br><span class="line">      ],</span><br><span class="line">      <span class="attr">"cwd"</span>: <span class="string">"$&#123;workspaceRoot&#125;"</span>,</span><br><span class="line">      <span class="attr">"protocol"</span>: <span class="string">"inspector"</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><h2 id="开始调试"><a href="#开始调试" class="headerlink" title="开始调试"></a>开始调试</h2><ul><li><p>打开对应的ts文件</p></li><li><p>打开调试 <code>alt + D</code></p></li><li><p>选择启动调试</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;vscode中调试typescript&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="vscode" scheme="https://bluebookmarks.github.io/tags/vscode/"/>
+    
+      <category term="typescript" scheme="https://bluebookmarks.github.io/tags/typescript/"/>
+    
+  </entry>
   
   <entry>
     <title>react-router</title>

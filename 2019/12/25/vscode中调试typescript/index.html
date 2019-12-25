@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>vscode中调试typescript | 书签 | 一个咸鱼到菜鸡的经历</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="vscode,typescript">
+    <meta name="description" content="vscode中调试typescript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vscode中调试typescript">
+<meta property="og:url" content="https://bluebookmarks.github.io/2019/12/25/vscode%E4%B8%AD%E8%B0%83%E8%AF%95typescript/index.html">
+<meta property="og:site_name" content="书签">
+<meta property="og:description" content="vscode中调试typescript">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-12-25T07:38:31.000Z">
+<meta property="article:modified_time" content="2019-12-25T07:47:12.544Z">
+<meta property="article:author" content="在下AKK">
+<meta property="article:tag" content="vscode">
+<meta property="article:tag" content="typescript">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="书签" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">在下AKK</h5>
+          <a href="mailto:1051347984@qq.com" title="1051347984@qq.com" class="mail">1051347984@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/BlueBookmarks" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">vscode中调试typescript</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">vscode中调试typescript</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-12-25T07:38:31.000Z" itemprop="datePublished" class="page-time">
+  2019-12-25
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目录"><span class="post-toc-number">1.</span> <span class="post-toc-text">目录</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#依赖包"><span class="post-toc-number">2.</span> <span class="post-toc-text">依赖包</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置tsconfig-json"><span class="post-toc-number">3.</span> <span class="post-toc-text">配置tsconfig.json</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置launch-json"><span class="post-toc-number">4.</span> <span class="post-toc-text">配置launch.json</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#开始调试"><span class="post-toc-number">5.</span> <span class="post-toc-text">开始调试</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-vscode中调试typescript"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">vscode中调试typescript</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-12-25 15:38:31" datetime="2019-12-25T07:38:31.000Z"  itemprop="datePublished">2019-12-25</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>vscode中调试typescript</p>
+<a id="more"></a>
+
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="#依赖包">依赖包</a></li>
+<li><a href="#配置tsconfigjson">配置tsconfig.json</a></li>
+<li><a href="#配置launchjson">配置launch.json</a></li>
+<li><a href="#开始调试">开始调试</a></li>
+</ul>
+<h2 id="依赖包"><a href="#依赖包" class="headerlink" title="依赖包"></a>依赖包</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; npm安装</span><br><span class="line">npm i typescript</span><br><span class="line">npm i ts-node</span><br><span class="line">&#x2F;&#x2F; yarn安装</span><br><span class="line">yarn add typescript</span><br><span class="line">yarn add ts-node</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置tsconfig-json"><a href="#配置tsconfig-json" class="headerlink" title="配置tsconfig.json"></a>配置tsconfig.json</h2><ul>
+<li><p>初始化tsconfig.json</p>
+<p><code>tsc --init</code></p>
+</li>
+<li><p>配置tsconfig.json</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"compilerOptions"</span>: &#123;</span><br><span class="line">    <span class="attr">"module"</span>: <span class="string">"commonjs"</span>,</span><br><span class="line">    <span class="attr">"target"</span>: <span class="string">"es5"</span>,</span><br><span class="line">    <span class="attr">"noImplicitAny"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"outDir"</span>: <span class="string">"./dist"</span>,</span><br><span class="line">    <span class="attr">"sourceMap"</span>: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"include"</span>: [</span><br><span class="line">    <span class="string">"src/**/*"</span></span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="配置launch-json"><a href="#配置launch-json" class="headerlink" title="配置launch.json"></a>配置launch.json</h2><ul>
+<li><p>打开调试 <code>alt + D</code></p>
+</li>
+<li><p>选择添加配置</p>
+</li>
+<li><p>编辑launch.json</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"version"</span>: <span class="string">"0.2.0"</span>,</span><br><span class="line">  <span class="attr">"configurations"</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"name"</span>: <span class="string">"Current TS File"</span>,</span><br><span class="line">      <span class="attr">"type"</span>: <span class="string">"node"</span>,</span><br><span class="line">      <span class="attr">"request"</span>: <span class="string">"launch"</span>,</span><br><span class="line">      <span class="attr">"program"</span>: <span class="string">"$&#123;workspaceRoot&#125;/node_modules/ts-node/dist/bin.js"</span>,</span><br><span class="line">      <span class="attr">"args"</span>: [</span><br><span class="line">          <span class="string">"$&#123;relativeFile&#125;"</span></span><br><span class="line">      ],</span><br><span class="line">      <span class="attr">"cwd"</span>: <span class="string">"$&#123;workspaceRoot&#125;"</span>,</span><br><span class="line">      <span class="attr">"protocol"</span>: <span class="string">"inspector"</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="开始调试"><a href="#开始调试" class="headerlink" title="开始调试"></a>开始调试</h2><ul>
+<li><p>打开对应的ts文件</p>
+</li>
+<li><p>打开调试 <code>alt + D</code></p>
+</li>
+<li><p>选择启动调试</p>
+</li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-12-25T07:47:12.544Z" itemprop="dateUpdated">2019-12-25 15:47:12</time>
+</span><br>
+
+
+        
+        (“▔□▔)我是真的菜，真的！ (눈_눈)
+        
+    </div>
+    
+    <footer>
+        <a href="https://bluebookmarks.github.io">
+            <img src="/img/avatar.jpg" alt="在下AKK">
+            在下AKK
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/typescript/" rel="tag">typescript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vscode/" rel="tag">vscode</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://bluebookmarks.github.io/2019/12/25/vscode%E4%B8%AD%E8%B0%83%E8%AF%95typescript/&title=《vscode中调试typescript》 — 书签&pic=https://bluebookmarks.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://bluebookmarks.github.io/2019/12/25/vscode%E4%B8%AD%E8%B0%83%E8%AF%95typescript/&title=《vscode中调试typescript》 — 书签&source=vscode中调试typescript" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://bluebookmarks.github.io/2019/12/25/vscode%E4%B8%AD%E8%B0%83%E8%AF%95typescript/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vscode中调试typescript》 — 书签&url=https://bluebookmarks.github.io/2019/12/25/vscode%E4%B8%AD%E8%B0%83%E8%AF%95typescript/&via=https://bluebookmarks.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://bluebookmarks.github.io/2019/12/25/vscode%E4%B8%AD%E8%B0%83%E8%AF%95typescript/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/12/25/vscode%E6%8F%92%E4%BB%B6%E6%95%B4%E7%90%86/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">vscode插件整理</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/12/25/react-router/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">react-router</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>在下AKK &copy; 2019</span>
+            <span>
+                个人博客
+                <!-- 
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> -->
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://bluebookmarks.github.io/2019/12/25/vscode%E4%B8%AD%E8%B0%83%E8%AF%95typescript/&title=《vscode中调试typescript》 — 书签&pic=https://bluebookmarks.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://bluebookmarks.github.io/2019/12/25/vscode%E4%B8%AD%E8%B0%83%E8%AF%95typescript/&title=《vscode中调试typescript》 — 书签&source=vscode中调试typescript" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://bluebookmarks.github.io/2019/12/25/vscode%E4%B8%AD%E8%B0%83%E8%AF%95typescript/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vscode中调试typescript》 — 书签&url=https://bluebookmarks.github.io/2019/12/25/vscode%E4%B8%AD%E8%B0%83%E8%AF%95typescript/&via=https://bluebookmarks.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://bluebookmarks.github.io/2019/12/25/vscode%E4%B8%AD%E8%B0%83%E8%AF%95typescript/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADOklEQVR42u3a0W4iMQwF0P7/T7PSPnW1zHBtB4mEM09VCyEnlXprOz8/8fP4+/z++vfz//ev3nW18v1qvZUXPNjY2NibsB+3z9XS95vIt5scR7Lb3IKNjY19KjsPrUkg5cd9f9DJL+DFe7GxsbG/kt0LvDxyJvvBxsbGxu41ku7XySPqvjGU/xQbGxv7m9nVmEm+nzSP8rDM21uLe2nY2NjYH8/uDXo/8+u3z7exsbGxP4z9KD5JdL3vE+8jrbAmNjY29kHs5J/7anOnV3j0AmkybMDGxsY+jz0f2fbaOtX1eyUTNjY29qnsalBVxwb5Cr2I6g0zsLGxsU9iTy7W5M36XhxW10mKImxsbOxT2b1/8fMtTrY+GTZUm2LY2NjY+7J7/9D3CoDe+vexlxQwhWkGNjY29lbsaju+OoJNNpEXFZMRQlR7YWNjY2/I7l3fyUmTQXIeSHnEYmNjY38ne9XR9Aa3q0qjqDjBxsbG3pw9KQMm49veeCAfQr+IQGxsbOzN2eV5b7yJ6uZ65UrzldjY2NjHsfOrM3l50AuevDipxts/n4WNjY19EHvV6HRyWNEWg/AbpS42Njb2Eez5gLb63mqY5UEVhSs2Njb2oewFwfC2NlPvms6lCBsbG/sIdjVgkmIjbwO9ryH14vXY2NjYB7Hzizi9UcH8Kk/viKNAxcbGxj6C3SsDkvCoFjnJEfSaX+V2EjY2Nva27FUbnRcMk3IlOkRsbGzs49h5CTEf5ebXhlaNdZ+sjI2NjX0QexIqecDkr+mVGdXdYmNjY5/Erv7Rr378qmHDZJ8vRrzY2NjYm7PzRn91tNAbJOQH19vhk985NjY29ubsPFry7a5tVM0LoSfvxcbGxj6OPRn6VltFvebRhFqeA2NjY2NvyM6fpPXfu7i5agAcDQ+wsbGxD2LPo6464l1VrhQm2K3jxsbGxt6L3WsJVeMhwc9DtBCl2NjY2Mexq434PH5WHWJv0Hv5SmxsbOyvZOdj2t4h9iqn/FrPi5tK2NjY2F/Grg53q0PlJAJz8LIAw8bGxv5gdv4xvUBK2k/zS5mF4QE2Njb2QezqoHdyaSb/6bwt1Qw2bGxs7J3YfwAbWwdKD1mP0AAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

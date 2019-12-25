@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>vscode插件整理 | 书签 | 一个咸鱼到菜鸡的经历</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="vscode">
+    <meta name="description" content="一个完美的编辑器插件可以帮助程序猿快出写出BUG而且表面看不出问题来 ๑乛◡乛๑     —— 在下AKK">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vscode插件整理">
+<meta property="og:url" content="https://bluebookmarks.github.io/2019/12/25/vscode%E6%8F%92%E4%BB%B6%E6%95%B4%E7%90%86/index.html">
+<meta property="og:site_name" content="书签">
+<meta property="og:description" content="一个完美的编辑器插件可以帮助程序猿快出写出BUG而且表面看不出问题来 ๑乛◡乛๑     —— 在下AKK">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-12-25T08:22:09.000Z">
+<meta property="article:modified_time" content="2019-12-25T09:22:17.055Z">
+<meta property="article:author" content="在下AKK">
+<meta property="article:tag" content="vscode">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="书签" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">在下AKK</h5>
+          <a href="mailto:1051347984@qq.com" title="1051347984@qq.com" class="mail">1051347984@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/BlueBookmarks" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">vscode插件整理</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">vscode插件整理</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-12-25T08:22:09.000Z" itemprop="datePublished" class="page-time">
+  2019-12-25
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基础类"><span class="post-toc-number">1.</span> <span class="post-toc-text">基础类</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Auto-Close-Tag"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Auto Close Tag</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Auto-Rename-Tag"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Auto Rename Tag</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Code-Runner"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Code Runner</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Code-Spell-Checker"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Code Spell Checker</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Color-Info"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">Color Info</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ESLint"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">ESLint</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#filesize"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">filesize</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#GitLens-—-Git-supercharged"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">GitLens — Git supercharged</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#HTML-CSS-Support"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">HTML CSS Support</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#HTML-Snippets"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">HTML Snippets</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Live-Server"><span class="post-toc-number">1.11.</span> <span class="post-toc-text">Live Server</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#markdownlint"><span class="post-toc-number">1.12.</span> <span class="post-toc-text">markdownlint</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Path-Intellisense"><span class="post-toc-number">1.13.</span> <span class="post-toc-text">Path Intellisense</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Prettier-Code-formatter"><span class="post-toc-number">1.14.</span> <span class="post-toc-text">Prettier - Code formatter</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#px2vw"><span class="post-toc-number">1.15.</span> <span class="post-toc-text">px2vw</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#React-Native-Tools"><span class="post-toc-number">1.16.</span> <span class="post-toc-text">React Native Tools</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Settings-Sync"><span class="post-toc-number">1.17.</span> <span class="post-toc-text">Settings Sync</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#stylelint"><span class="post-toc-number">1.18.</span> <span class="post-toc-text">stylelint</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#TSLint"><span class="post-toc-number">1.19.</span> <span class="post-toc-text">TSLint</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#React"><span class="post-toc-number">2.</span> <span class="post-toc-text">React</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ES7-React-Redux-GraphQL-React-Native-snippets"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">ES7 React&#x2F;Redux&#x2F;GraphQL&#x2F;React-Native snippets</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Vue"><span class="post-toc-number">3.</span> <span class="post-toc-text">Vue</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Vetur"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">Vetur</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#美化插件"><span class="post-toc-number">4.</span> <span class="post-toc-text">美化插件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件图标类"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">文件图标类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#主题"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">主题</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#其他"><span class="post-toc-number">5.</span> <span class="post-toc-text">其他</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#LeetCode"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">LeetCode</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-vscode插件整理"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">vscode插件整理</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-12-25 16:22:09" datetime="2019-12-25T08:22:09.000Z"  itemprop="datePublished">2019-12-25</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>一个完美的编辑器插件可以帮助程序猿快出写出BUG而且表面看不出问题来 ๑乛◡乛๑     —— 在下AKK</p>
+<a id="more"></a>
+
+<p>整理一下我常用的vscode插件</p>
+<hr>
+<h2 id="基础类"><a href="#基础类" class="headerlink" title="基础类"></a>基础类</h2><h3 id="Auto-Close-Tag"><a href="#Auto-Close-Tag" class="headerlink" title="Auto Close Tag"></a>Auto Close Tag</h3><p>自动闭合标签，提升效率的利器，react，vue亲测可用</p>
+<h3 id="Auto-Rename-Tag"><a href="#Auto-Rename-Tag" class="headerlink" title="Auto Rename Tag"></a>Auto Rename Tag</h3><p>改变标签时，自动改变对应的开始闭合标签，不用找过来找过去</p>
+<h3 id="Code-Runner"><a href="#Code-Runner" class="headerlink" title="Code Runner"></a>Code Runner</h3><p>无需html也可以运行js，ts。还可以运行node，java，python，php…代码（需要对应的环境）</p>
+<h3 id="Code-Spell-Checker"><a href="#Code-Spell-Checker" class="headerlink" title="Code Spell Checker"></a>Code Spell Checker</h3><p>代码英文检测，助你写出正确的英文命名变量（例：写出frist会标出错误，并提供正确的修复）</p>
+<h3 id="Color-Info"><a href="#Color-Info" class="headerlink" title="Color Info"></a>Color Info</h3><p>在颜色光标上悬停可出现色彩模型</p>
+<h3 id="ESLint"><a href="#ESLint" class="headerlink" title="ESLint"></a>ESLint</h3><p>eslint检测，可以帮助你写出符合团队规范的代码</p>
+<h3 id="filesize"><a href="#filesize" class="headerlink" title="filesize"></a>filesize</h3><p>查看你代码文件的大小</p>
+<h3 id="GitLens-—-Git-supercharged"><a href="#GitLens-—-Git-supercharged" class="headerlink" title="GitLens — Git supercharged"></a>GitLens — Git supercharged</h3><p>非常重要的git插件，可以让你清楚的知道git上代码的提交历史，修改信息，操作人员（甩锅必备）</p>
+<h3 id="HTML-CSS-Support"><a href="#HTML-CSS-Support" class="headerlink" title="HTML CSS Support"></a>HTML CSS Support</h3><p>html标签上写class智能提示项目所支持的样式</p>
+<h3 id="HTML-Snippets"><a href="#HTML-Snippets" class="headerlink" title="HTML Snippets"></a>HTML Snippets</h3><p>H5代码片段以及提示</p>
+<h3 id="Live-Server"><a href="#Live-Server" class="headerlink" title="Live Server"></a>Live Server</h3><p>可以开启本地服务器，方便调试</p>
+<h3 id="markdownlint"><a href="#markdownlint" class="headerlink" title="markdownlint"></a>markdownlint</h3><p>markdown文件的规则检测，助你写出一份标准的markdown</p>
+<h3 id="Path-Intellisense"><a href="#Path-Intellisense" class="headerlink" title="Path Intellisense"></a>Path Intellisense</h3><p>文件索引插件，帮助你快速写出正确的文件路径</p>
+<h3 id="Prettier-Code-formatter"><a href="#Prettier-Code-formatter" class="headerlink" title="Prettier - Code formatter"></a>Prettier - Code formatter</h3><p>代码美化插件，一键美化</p>
+<h3 id="px2vw"><a href="#px2vw" class="headerlink" title="px2vw"></a>px2vw</h3><p>一个自动把 px 单位转成 vw 单位的 VSCode 插件，写H5必备</p>
+<h3 id="React-Native-Tools"><a href="#React-Native-Tools" class="headerlink" title="React Native Tools"></a>React Native Tools</h3><p>在vscode 上调试 React Native 的插件</p>
+<h3 id="Settings-Sync"><a href="#Settings-Sync" class="headerlink" title="Settings Sync"></a>Settings Sync</h3><p>上传本地配置，插件列表到github上保存，即使更换电脑可以快速同步设置和插件（需要Github Token）</p>
+<h3 id="stylelint"><a href="#stylelint" class="headerlink" title="stylelint"></a>stylelint</h3><p>检测css的规则，确保你写出的是正确和标准的CSS</p>
+<h3 id="TSLint"><a href="#TSLint" class="headerlink" title="TSLint"></a>TSLint</h3><p>检测Ts的规则，助你写出标准的TS代码</p>
+<hr>
+<h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><h3 id="ES7-React-Redux-GraphQL-React-Native-snippets"><a href="#ES7-React-Redux-GraphQL-React-Native-snippets" class="headerlink" title="ES7 React/Redux/GraphQL/React-Native snippets"></a>ES7 React/Redux/GraphQL/React-Native snippets</h3><p>写 React/Redux/React-Native 时可以通过简写快速生成对应的模板</p>
+<p><code>imr → import React from &#39;react&#39;</code></p>
+<p><code>imrn → import { $1 } from &#39;react-native&#39;</code></p>
+<hr>
+<h2 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h2><h3 id="Vetur"><a href="#Vetur" class="headerlink" title="Vetur"></a>Vetur</h3><p>写vue必备，代码自动补全，错误提示，语法高亮</p>
+<hr>
+<h2 id="美化插件"><a href="#美化插件" class="headerlink" title="美化插件"></a>美化插件</h2><h3 id="文件图标类"><a href="#文件图标类" class="headerlink" title="文件图标类"></a>文件图标类</h3><ul>
+<li><p>Material Icon Theme</p>
+<p>扁平风的文件图标</p>
+</li>
+<li><p>vscode-icons</p>
+<p>超级多的图标，可以自己定制</p>
+</li>
+</ul>
+<h3 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h3><ul>
+<li><p>Noctis</p>
+<p>超级多的配色</p>
+</li>
+<li><p>One Dark Pro</p>
+<p>很火的一个主题，深色主题 + 代码配色 很舒服</p>
+</li>
+</ul>
+<hr>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="LeetCode"><a href="#LeetCode" class="headerlink" title="LeetCode"></a>LeetCode</h3><p>在 VS Code 中练习 LeetCode，闲来无事可以在vscode上刷算法题</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-12-25T09:22:17.055Z" itemprop="dateUpdated">2019-12-25 17:22:17</time>
+</span><br>
+
+
+        
+        (“▔□▔)我是真的菜，真的！ (눈_눈)
+        
+    </div>
+    
+    <footer>
+        <a href="https://bluebookmarks.github.io">
+            <img src="/img/avatar.jpg" alt="在下AKK">
+            在下AKK
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vscode/" rel="tag">vscode</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://bluebookmarks.github.io/2019/12/25/vscode%E6%8F%92%E4%BB%B6%E6%95%B4%E7%90%86/&title=《vscode插件整理》 — 书签&pic=https://bluebookmarks.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://bluebookmarks.github.io/2019/12/25/vscode%E6%8F%92%E4%BB%B6%E6%95%B4%E7%90%86/&title=《vscode插件整理》 — 书签&source=一个完美的编辑器插件可以帮助程序猿快出写出BUG而且表面看不出问题来 ๑乛◡乛๑     —— 在下AKK" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://bluebookmarks.github.io/2019/12/25/vscode%E6%8F%92%E4%BB%B6%E6%95%B4%E7%90%86/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vscode插件整理》 — 书签&url=https://bluebookmarks.github.io/2019/12/25/vscode%E6%8F%92%E4%BB%B6%E6%95%B4%E7%90%86/&via=https://bluebookmarks.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://bluebookmarks.github.io/2019/12/25/vscode%E6%8F%92%E4%BB%B6%E6%95%B4%E7%90%86/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/12/25/vscode%E4%B8%AD%E8%B0%83%E8%AF%95typescript/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">vscode中调试typescript</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>在下AKK &copy; 2019</span>
+            <span>
+                个人博客
+                <!-- 
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> -->
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://bluebookmarks.github.io/2019/12/25/vscode%E6%8F%92%E4%BB%B6%E6%95%B4%E7%90%86/&title=《vscode插件整理》 — 书签&pic=https://bluebookmarks.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://bluebookmarks.github.io/2019/12/25/vscode%E6%8F%92%E4%BB%B6%E6%95%B4%E7%90%86/&title=《vscode插件整理》 — 书签&source=一个完美的编辑器插件可以帮助程序猿快出写出BUG而且表面看不出问题来 ๑乛◡乛๑     —— 在下AKK" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://bluebookmarks.github.io/2019/12/25/vscode%E6%8F%92%E4%BB%B6%E6%95%B4%E7%90%86/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vscode插件整理》 — 书签&url=https://bluebookmarks.github.io/2019/12/25/vscode%E6%8F%92%E4%BB%B6%E6%95%B4%E7%90%86/&via=https://bluebookmarks.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://bluebookmarks.github.io/2019/12/25/vscode%E6%8F%92%E4%BB%B6%E6%95%B4%E7%90%86/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADMUlEQVR42u3aQW7jQAwEwPz/015g71a6SQWwxqWTYcQj1eRAkT0/P/H1+n+9++b68/VvZ3e/Xv+2CxsbG/sh7Nfl9e4G13+Zb1myQfm2JhZsbGzsU9nXZaO9fVKKcmTyL8kt2NjY2N/Mvn6UvERtYHkjhI2NjY2ds/Mi127BbGVsbGzs72S3JaRtIZImJxoGrVsXbGxs7PPYbdT6yZ//MN/GxsbG/kj2q7zaV//8sM4mYK4V2NjY2Aex28M3eUvQlpn9RrfPho2NjX0G+/pxZ8VsVmw2G51HwtjY2NjnsZNRfnIQJ1+nLWl5JFBUbGxsbOyD2LMRTxsntMHDLKDNyyo2Njb2eezkZtftyl1BchIPbEICbGxs7PPYOax99U+GR8lG5/e9rS3BxsbGfhQ7Hwklf5kUnuRBkzXbld92YNjY2NgPZ29m5nnQOxsqbcLjolnCxsbGPo6dh6975OzwTdu0FCk3NjY29gPZ+SB+VjySh5tFEbPSiI2Njf097DxY3QyG7oqE8wYGGxsb+2x225xsCl47zNqMon5pRbCxsbEfzt6PdWbf5EWxLat1yo2NjY39Bew8MKiHO+ui2MbVRQHDxsbGfgg7HyolgLbxyNuS2UGiqAPDxsbGPoI9e93fDHraAzft5v6yMjY2NvZx7OSFfnWbuAmZhcr5IAkbGxv7VHbyuLNjN+1v92tGG42NjY19HDsvA/mxm3ydfLV2zV8O62BjY2MfwW5D1jx2nbUQs9igbZCwsbGxz2Pno//hMcfRvdoRUlLA3sa92NjY2Eew2xj13tIyO3yT/3aVSGBjY2N/MDsfrLcF494jOG2MUXRd2NjY2MexN+DZiKcIaMvh1NvnwcbGxj6I3R6LSRqA5MoP7uShxWZEhY2Njf1c9qu82rf6tsnZb030v8XGxsY+iN2WnLyd2LcxbXuTDK2wsbGxT2XPRkWbfb03QphtFjY2NvZ57Lww5EFsu35eAtvR1dsCho2Njf1l7OTG+bGbTSnat0bY2NjY2PnAqI0c8lx61ZBgY2NjH8eelZbr7UuofxHQRpuLjY2NfRC7DXrbG9y7WZtDP/UWYGNjY386+x/43UoVBsg/9QAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
