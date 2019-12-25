@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>react-router | 蓝书签 | 博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="react">
+    <meta name="description" content="React Router 是一个基于 React 之上的强大路由库，它可以让你向应用中快速地添加视图和数据流，同时保持页面与 URL 间的同步。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react-router">
+<meta property="og:url" content="https://bluebookmarks.github.io/2019/12/25/react-router/index.html">
+<meta property="og:site_name" content="蓝书签">
+<meta property="og:description" content="React Router 是一个基于 React 之上的强大路由库，它可以让你向应用中快速地添加视图和数据流，同时保持页面与 URL 间的同步。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-12-25T02:43:12.000Z">
+<meta property="article:modified_time" content="2019-12-25T03:00:28.541Z">
+<meta property="article:author" content="杨耀">
+<meta property="article:tag" content="react">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="蓝书签" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">杨耀</h5>
+          <a href="mailto:1051347984@qq.com" title="1051347984@qq.com" class="mail">1051347984@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/BlueBookmarks" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">react-router</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">react-router</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-12-25T02:43:12.000Z" itemprop="datePublished" class="page-time">
+  2019-12-25
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目录"><span class="post-toc-number">1.</span> <span class="post-toc-text">目录</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#react-router-dom"><span class="post-toc-number">2.</span> <span class="post-toc-text">react-router-dom</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-安装react-router-dom"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1. 安装react-router-dom</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-使用react-router-dom"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2. 使用react-router-dom</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-使用嵌套路由"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">3. 使用嵌套路由</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-react-router"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">react-router</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-12-25 10:43:12" datetime="2019-12-25T02:43:12.000Z"  itemprop="datePublished">2019-12-25</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>React Router 是一个基于 React 之上的强大路由库，它可以让你向应用中快速地添加视图和数据流，同时保持页面与 URL 间的同步。</p>
+<a id="more"></a>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p><a href="#react-router-dom">react-router-dom</a></p>
+<ol>
+<li><p><a href="#1-安装react-router-dom">安装react-router-dom</a></p>
+</li>
+<li><p><a href="#2-使用react-router-dom">使用react-router-dom</a></p>
+</li>
+<li><p><a href="#3-使用嵌套路由">使用嵌套路由</a></p>
+</li>
+</ol>
+<hr>
+<h2 id="react-router-dom"><a href="#react-router-dom" class="headerlink" title="react-router-dom"></a>react-router-dom</h2><p>react-router-dom 是 react-router v4 的 web 版本</p>
+<p>v4 和 v2, v3的区别为 v4版本把路由拆分为组件的形式可在各个模块中调用</p>
+<p>v2/v3</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;Router history=&#123;browserHistory&#125;&gt;</span><br><span class="line">  &lt;Route path=<span class="string">"/"</span> component=&#123;Home&#125;&gt;</span><br><span class="line">    &lt;IndexRoute component=&#123;HomePage&#125; /&gt;</span><br><span class="line">    &lt;Route path=<span class="string">"/users"</span> component=&#123;UsersPage&#125; /&gt;</span><br><span class="line">  &lt;<span class="regexp">/Route&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>Router&gt;</span><br></pre></td></tr></table></figure>
+
+<p>v4</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="comment">/* App.js */</span>&#125;</span><br><span class="line">&lt;BrowserRouter&gt;</span><br><span class="line">  &lt;Home /&gt;</span><br><span class="line">&lt;<span class="regexp">/BrowserRouter&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&#123;/</span>* Home.js *<span class="regexp">/&#125;</span></span><br><span class="line"><span class="regexp">&lt;div&gt;</span></span><br><span class="line"><span class="regexp">  &lt;div className="pages"&gt;page:</span></span><br><span class="line"><span class="regexp">    &lt;Route path="/</span><span class="string">" exact component=&#123;HomePage&#125; /&gt;</span></span><br><span class="line"><span class="string">    &lt;Route path="</span>/users<span class="string">" component=&#123;UsersPage&#125; /&gt;</span></span><br><span class="line"><span class="string">  &lt;/div&gt;</span></span><br><span class="line"><span class="string">&lt;/div&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-安装react-router-dom"><a href="#1-安装react-router-dom" class="headerlink" title="1. 安装react-router-dom"></a>1. 安装react-router-dom</h3><p>命令 <code>yarn add react-router-dom --dev</code> || <code>npm i react-router-dom -S</code></p>
+<h3 id="2-使用react-router-dom"><a href="#2-使用react-router-dom" class="headerlink" title="2. 使用react-router-dom"></a>2. 使用react-router-dom</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">  BrowserRouter <span class="keyword">as</span> Router,</span><br><span class="line">  Route,</span><br><span class="line">  Link,</span><br><span class="line">  Switch,</span><br><span class="line">  Redirect</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span></span><br><span class="line"><span class="keyword">import</span> Index <span class="keyword">from</span> <span class="string">'./pages/Index'</span></span><br><span class="line"><span class="keyword">import</span> Other <span class="keyword">from</span> <span class="string">'./pages/Other'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> App = <span class="function"><span class="params">()</span> =&gt;</span> (</span><br><span class="line">  &lt;Router&gt;</span><br><span class="line">    &lt;div className=<span class="string">"App"</span>&gt;</span><br><span class="line">      点击位置：</span><br><span class="line">      &lt;ul&gt;</span><br><span class="line">        &#123;<span class="comment">/* link 跳转标签 */</span>&#125;</span><br><span class="line">        &lt;li&gt;<span class="xml"><span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">"/"</span>&gt;</span>首页<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">        &lt;li&gt;<span class="xml"><span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">"/other"</span>&gt;</span>其他<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">      &lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">      当前页面：</span></span><br><span class="line"><span class="regexp">      &#123;/</span>* Switch 只渲染一个路由 *<span class="regexp">/&#125;</span></span><br><span class="line"><span class="regexp">      &lt;Switch&gt;</span></span><br><span class="line"><span class="regexp">        &#123;/</span>* exact 只对当前路由匹配 *<span class="regexp">/&#125;</span></span><br><span class="line"><span class="regexp">        &lt;Route exact path="/</span><span class="string">" component=&#123; Index &#125;&gt;&lt;/Route&gt;</span></span><br><span class="line"><span class="string">        &lt;Route path="</span>/other<span class="string">" component=&#123; Other &#125;&gt;&lt;/Route&gt;</span></span><br><span class="line"><span class="string">        &#123;/* 重定向  输入不存在的路径时跳转 */&#125;</span></span><br><span class="line"><span class="string">        &lt;Redirect to="</span>/<span class="string">" /&gt;</span></span><br><span class="line"><span class="string">      &lt;/Switch&gt;</span></span><br><span class="line"><span class="string">    &lt;/div&gt;</span></span><br><span class="line"><span class="string">  &lt;/Router&gt;</span></span><br><span class="line"><span class="string">)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">export default App</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>v4 版本则有了一个包含的关系：如匹配 path=”/users” 的路由会匹配 path=”/“的路由，在页面中这两个模块会同时进行渲染。因此，v4中多了 <code>exact</code> 关键词，表示<strong>只对当前的路由进行匹配</strong></p>
+</li>
+<li><p><code>&lt;Switch&gt;</code>只有一个路由会被渲染，并且<strong>总是渲染第一个匹配到的组件</strong>。（PS: 在第一个路由中，还是需要使用 exact，否则，当我们渲染 ‘/other’ 或 ‘/other/page’ 时，只会显示匹配 ‘/‘ 的组件。）</p>
+</li>
+<li><p><code>&lt;Redirect&gt;</code> 组件，单独使用时，一旦当路由匹配到的时候，浏览器就会进行重定向跳转；而配合 <code>&lt;Switch&gt;</code> 使用时，<strong>只有当没有路由匹配的时候</strong>，才会进行重定向。 （eg： 跳转-&gt; /error  未定义重定向 -&gt; /）</p>
+</li>
+<li><p>v4版本废弃掉<code>&lt;IndexRoute&gt;</code>使用<code>&lt;Route&gt;</code>中的<code>exact</code>关键词代替</p>
+</li>
+</ol>
+<h3 id="3-使用嵌套路由"><a href="#3-使用嵌套路由" class="headerlink" title="3. 使用嵌套路由"></a>3. 使用嵌套路由</h3><p>第一种方式（不推荐）</p>
+<p>这种方式很冗余，渲染时要把整体通用部分重复渲染，项目较大会产生重复代码，降低性能</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> App = <span class="function"><span class="params">()</span> =&gt;</span> (</span><br><span class="line">  &lt;Router&gt;</span><br><span class="line">    &lt;Switch&gt;</span><br><span class="line">      &#123;<span class="comment">/* exact 只对当前路由匹配 */</span>&#125;</span><br><span class="line">      &lt;Route exact path=<span class="string">"/"</span> component=&#123; Index &#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Route</span>&gt;</span></span></span><br><span class="line">      &lt;Route path=<span class="string">"/other"</span> exact component=&#123; Other &#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Route</span>&gt;</span></span></span><br><span class="line">      &lt;Route path=<span class="string">"/other/:userId"</span> component=&#123; OtherUser &#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Route</span>&gt;</span></span></span><br><span class="line">      &lt;Route path=<span class="string">"/add"</span> exact component=&#123; Add &#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Route</span>&gt;</span></span></span><br><span class="line">      &lt;Route path=<span class="string">"/add/:num"</span> component=&#123; AddNum &#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Route</span>&gt;</span></span></span><br><span class="line">      &#123;<span class="comment">/* 重定向  输入不存在的路径时跳转 */</span>&#125;</span><br><span class="line">      &lt;Redirect to=<span class="string">"/"</span> /&gt;</span><br><span class="line">    &lt;<span class="regexp">/Switch&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>Router&gt;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>第二种方式(推荐)</p>
+<p>通过组件的思想来实现，对应的路由嵌套到对应的页面。可以使用 <code>match</code> 路由属性来优化，方便代码维护</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> App = <span class="function"><span class="params">()</span> =&gt;</span> (</span><br><span class="line">  &lt;Router&gt;</span><br><span class="line">    &lt;Switch&gt;</span><br><span class="line">      &#123;<span class="comment">/* exact 只对当前路由匹配 */</span>&#125;</span><br><span class="line">      &lt;Route exact path=<span class="string">"/"</span> component=&#123; Index &#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Route</span>&gt;</span></span></span><br><span class="line">      &lt;Route path=<span class="string">"/other"</span> exact component=&#123; Other &#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Route</span>&gt;</span></span></span><br><span class="line">      &#123;<span class="comment">/* 重定向  输入不存在的路径时跳转 */</span>&#125;</span><br><span class="line">      &lt;Redirect to=<span class="string">"/"</span> /&gt;</span><br><span class="line">    &lt;<span class="regexp">/Switch&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>Router&gt;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Other = <span class="function">(<span class="params">&#123;match&#125;</span>) =&gt;</span> (</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;Switch&gt;</span><br><span class="line">      &lt;Route path=&#123;match.path&#125; exact render=&#123;() =&gt; <span class="xml"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>地址栏输入ID<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span> <span class="regexp">/&gt;</span></span><br><span class="line"><span class="regexp">      &lt;Route path=&#123;`$&#123;match.path&#125;/</span>:id<span class="string">`&#125; component=&#123; User &#125; /&gt;</span></span><br><span class="line"><span class="string">    &lt;/Switch&gt;</span></span><br><span class="line"><span class="string">  &lt;/div&gt;</span></span><br><span class="line"><span class="string">)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">const User = (&#123;match&#125;) =&gt; (</span></span><br><span class="line"><span class="string">  &lt;div&gt;</span></span><br><span class="line"><span class="string">    user id &#123;match.params.id&#125;</span></span><br><span class="line"><span class="string">  &lt;/div&gt;</span></span><br><span class="line"><span class="string">)</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-12-25T03:00:28.541Z" itemprop="dateUpdated">2019-12-25 11:00:28</time>
+</span><br>
+
+
+        
+        我是真的菜
+        
+    </div>
+    
+    <footer>
+        <a href="https://bluebookmarks.github.io">
+            <img src="/img/avatar.jpg" alt="杨耀">
+            杨耀
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/" rel="tag">react</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://bluebookmarks.github.io/2019/12/25/react-router/&title=《react-router》 — 蓝书签&pic=https://bluebookmarks.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://bluebookmarks.github.io/2019/12/25/react-router/&title=《react-router》 — 蓝书签&source=React Router 是一个基于 React 之上的强大路由库，它可以让你向应用中快速地添加视图和数据流，同时保持页面与 URL 间的同步。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://bluebookmarks.github.io/2019/12/25/react-router/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《react-router》 — 蓝书签&url=https://bluebookmarks.github.io/2019/12/25/react-router/&via=https://bluebookmarks.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://bluebookmarks.github.io/2019/12/25/react-router/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>杨耀 &copy; 2019</span>
+            <span>
+                个人博客
+                <!-- 
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> -->
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://bluebookmarks.github.io/2019/12/25/react-router/&title=《react-router》 — 蓝书签&pic=https://bluebookmarks.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://bluebookmarks.github.io/2019/12/25/react-router/&title=《react-router》 — 蓝书签&source=React Router 是一个基于 React 之上的强大路由库，它可以让你向应用中快速地添加视图和数据流，同时保持页面与 URL 间的同步。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://bluebookmarks.github.io/2019/12/25/react-router/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《react-router》 — 蓝书签&url=https://bluebookmarks.github.io/2019/12/25/react-router/&via=https://bluebookmarks.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://bluebookmarks.github.io/2019/12/25/react-router/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACIUlEQVR42u3awY7rIAwF0Pn/n+7bjlQlvdfhjVQ4WVUppRwWFrb5+Ymf16/n/c3V+99v3me7+vw+ftmDgYHxtYzX7dMuOpn5auQ97MM8GBgYBzBmU7ff3v/j/f9+mAEDAwPjYin3mNl4DAwMjFUBt01Q28QYAwMDY5bErkpo221anItjYGB8ISOvuv/95//S38DAwPgqxqt8ZsfEdon1qjAwMLZmzKbOL0a07YQn68HAwNiVkTQXkwSyCIslNYJhYGAcwGgx7ZhVW3AJxsDAOIDRBtz82Jf8Nv+Xy3ViYGBszUhKXfkUs4tibasyOnRiYGBsxEjSyzwRzXltCS/aewwMjE0ZxaB4ufkSW8CHgywGBsamjCREPiqEjbapbqBiYGBszUiSySfXv9rwOiNhYGDszZiV4GcB94/ujGBgYBzAeF70b0t4Cy6QYWBgHMB4cvVh7Zsk0S2qgBgYGFswZmX99vDXblDR08DAwDiGMWsc5o3MtqDWHkwxMDBOZrSTJiHyNXqijcDAwDiA0TYm86ZCngy3RT0MDIwzGffTzcJi21qYlQgxMDB2ZTw/ouXjZ5c5IjYGBsbWjFmzc1Zua0PzqtkwMDD2YORHwyTw5QfKWVui3mkMDIyNGKtCZ7sd7XKLyxYYGBgHM2awvG2QtCUwMDAwZgG3PRTmvYsEiYGBcQLjeQvzeUF/dqzEwMA4gdGmjm3AnX07u16GgYGxHeMfBCKJh5+Bs/wAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
