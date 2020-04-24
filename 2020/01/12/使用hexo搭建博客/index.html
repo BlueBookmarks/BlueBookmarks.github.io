@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>使用hexo搭建博客 | 书签 | 博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="hexo">
+    <meta name="description" content="那个男孩子不想拥有一个个人博客（还是免费的） 现在有很多第三方博客网站，掘金，简书，csdn等，今天就来搭建一个个人的博客网站，基于Github Page，国内可以通过码云，coding等网站托管，操作步骤大体相同。 目录 环境要求  安装Hexo  Github设置  配置 SSH key  部署到Github  写博客  图床推荐    环境要求需要 node 和 git 环境 node中文网">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用hexo搭建博客">
+<meta property="og:url" content="https://bluebookmarks.github.io/2020/01/12/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:site_name" content="书签">
+<meta property="og:description" content="那个男孩子不想拥有一个个人博客（还是免费的） 现在有很多第三方博客网站，掘金，简书，csdn等，今天就来搭建一个个人的博客网站，基于Github Page，国内可以通过码云，coding等网站托管，操作步骤大体相同。 目录 环境要求  安装Hexo  Github设置  配置 SSH key  部署到Github  写博客  图床推荐    环境要求需要 node 和 git 环境 node中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.ax1x.com/2020/04/24/JB9IUg.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/04/24/JBAlHx.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/04/24/JBZPud.png">
+<meta property="article:published_time" content="2020-01-12T06:50:05.000Z">
+<meta property="article:modified_time" content="2020-04-24T06:20:38.277Z">
+<meta property="article:author" content="在下AKK">
+<meta property="article:tag" content="hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/04/24/JB9IUg.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="书签" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">在下AKK</h5>
+          <a href="mailto:1051347984@qq.com" title="1051347984@qq.com" class="mail">1051347984@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/BlueBookmarks" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">使用hexo搭建博客</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">使用hexo搭建博客</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-01-12T06:50:05.000Z" itemprop="datePublished" class="page-time">
+  2020-01-12
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目录"><span class="post-toc-number">1.</span> <span class="post-toc-text">目录</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#环境要求"><span class="post-toc-number">2.</span> <span class="post-toc-text">环境要求</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装Hexo"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装Hexo</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Github设置"><span class="post-toc-number">4.</span> <span class="post-toc-text">Github设置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置-SSH-key"><span class="post-toc-number">5.</span> <span class="post-toc-text">配置 SSH key</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#部署到Github"><span class="post-toc-number">6.</span> <span class="post-toc-text">部署到Github</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#写博客"><span class="post-toc-number">7.</span> <span class="post-toc-text">写博客</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-使用hexo搭建博客"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">使用hexo搭建博客</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-01-12 14:50:05" datetime="2020-01-12T06:50:05.000Z"  itemprop="datePublished">2020-01-12</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>那个男孩子不想拥有一个个人博客（还是免费的）</p>
+<p>现在有很多第三方博客网站，掘金，简书，csdn等，今天就来搭建一个个人的博客网站，基于Github Page，国内可以通过码云，coding等网站托管，操作步骤大体相同。</p>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ol>
+<li><p><a href="#环境要求">环境要求</a></p>
+</li>
+<li><p><a href="#安装Hexo">安装Hexo</a></p>
+</li>
+<li><p><a href="#Github设置">Github设置</a></p>
+</li>
+<li><p><a href="#配置-SSH-key">配置 SSH key</a></p>
+</li>
+<li><p><a href="#部署到Github">部署到Github</a></p>
+</li>
+<li><p><a href="#写博客">写博客</a></p>
+</li>
+<li><p><a href="#图床推荐">图床推荐</a></p>
+</li>
+</ol>
+<hr>
+<h2 id="环境要求"><a href="#环境要求" class="headerlink" title="环境要求"></a>环境要求</h2><p>需要 node 和 git 环境</p>
+<p>node中文网 <a href="#http://nodejs.cn/">http://nodejs.cn/</a></p>
+<p>git教程和使用参考廖雪峰的教程 <a href="#https://www.liaoxuefeng.com/wiki/896043488029600/896067008724000">git教程</a></p>
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>Hexo官网 <a href="#https://hexo.io/zh-cn/">https://hexo.io/zh-cn/</a></p>
+<ol>
+<li><p>全局安装 hexo</p>
+<p> <code>npm install hexo-cli -g</code></p>
+</li>
+<li><p>创建 hexo 项目</p>
+ <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br><span class="line"><span class="built_in">cd</span> blog</span><br><span class="line">npm i</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>项目目录和运行</p>
+<p> 创建后的项目目录</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">├── _config.yml # 网站的配置信息</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds # 模版文件夹</span><br><span class="line">├── source  # 资源文件夹</span><br><span class="line">|   ├── _drafts # 草稿文件夹</span><br><span class="line">|   └── _posts # 博客文章Markdowm</span><br><span class="line">└── themes  # 主题文件夹</span><br></pre></td></tr></table></figure>
+
+<p> 本地运行命令 <code>hexo s</code></p>
+<p> 浏览器打开<code>http://localhost:4000</code> 就可以看到效果</p>
+</li>
+</ol>
+<h2 id="Github设置"><a href="#Github设置" class="headerlink" title="Github设置"></a>Github设置</h2><p>Github上新建一个项目</p>
+<p>项目名必须为 <code>github用户名.github.io</code></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://s1.ax1x.com/2020/04/24/JB9IUg.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>创建完成后</p>
+<p>在根目录添加一个index.html，随便编辑一些东西</p>
+<p>然后打开 <code>http://你的用户名.github.io</code> 就可以看到你写的东西了</p>
+<h2 id="配置-SSH-key"><a href="#配置-SSH-key" class="headerlink" title="配置 SSH key"></a>配置 SSH key</h2><p>使用hexo自动部署需要使用SSH key</p>
+<ol>
+<li><p>查看是否生成过打开cmd输入</p>
+<p> <code>cd ~/.ssh</code> 没报错说明以前生成过直接使用 <code>cat ~/.ssh/id_rsa.pub</code> 命令就是可以查看本机上的 SSH key</p>
+</li>
+<li><p>以前未生成过SSH key</p>
+<p> 全局配置git账号</p>
+ <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name "用户名"</span><br><span class="line">git config --global user.email "邮箱地址"</span><br></pre></td></tr></table></figure>
+
+<p> 开始生成 SSH key</p>
+<p> <code>ssh-keygen -t rsa -C &#39;邮箱地址&#39;</code></p>
+<p> <img src="https://s1.ax1x.com/2020/04/24/JBAlHx.jpg" alt=" "></p>
+<p> 返回 <code>Hi xxx! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code> 说明添加SSH成功</p>
+</li>
+<li><p>添加SSH key 到 Github</p>
+<p> <img src="https://s1.ax1x.com/2020/04/24/JBZPud.png" alt=" "></p>
+</li>
+</ol>
+<h2 id="部署到Github"><a href="#部署到Github" class="headerlink" title="部署到Github"></a>部署到Github</h2><p>官方部署文档 <a href="https://hexo.io/zh-cn/docs/one-command-deployment" target="_blank" rel="noopener">部署文档</a></p>
+<ol>
+<li><p>配置_config.yml 文件参数</p>
+ <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span></span><br><span class="line">    <span class="attr">github:</span> <span class="string">https://github.com/用户名/用户名.github.io</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">分支名字</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>要安装一个部署插件 <code>hexo-deployer-git</code></p>
+<p> <code>npm install hexo-deployer-git --save</code></p>
+</li>
+<li><p>执行命令部署上传</p>
+<p> <code>hexo g -d</code></p>
+</li>
+<li><p>打开你的博客地址</p>
+</li>
+</ol>
+<h2 id="写博客"><a href="#写博客" class="headerlink" title="写博客"></a>写博客</h2><p>官网写作文档 <a href="https://hexo.io/zh-cn/docs/writing" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/writing</a></p>
+<ol>
+<li><p>新建文章</p>
+<p> <code>hexo new &#39;文章标题&#39;</code></p>
+</li>
+<li><p>文章目录</p>
+<p> 新建的文章在 <code>/source/_posts</code> 中查看到</p>
+</li>
+</ol>
+<p>本地运行查看</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-04-24T06:20:38.277Z" itemprop="dateUpdated">2020-04-24 14:20:38</time>
+</span><br>
+
+
+        
+        (“▔□▔)我是真的菜，真的！ (눈_눈)
+        
+    </div>
+    
+    <footer>
+        <a href="https://bluebookmarks.github.io">
+            <img src="/img/avatar.jpg" alt="在下AKK">
+            在下AKK
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://bluebookmarks.github.io/2020/01/12/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/&title=《使用hexo搭建博客》 — 书签&pic=https://bluebookmarks.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://bluebookmarks.github.io/2020/01/12/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/&title=《使用hexo搭建博客》 — 书签&source=心如花木，向阳而生" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://bluebookmarks.github.io/2020/01/12/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《使用hexo搭建博客》 — 书签&url=https://bluebookmarks.github.io/2020/01/12/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/&via=https://bluebookmarks.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://bluebookmarks.github.io/2020/01/12/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/12/25/vscode%E6%8F%92%E4%BB%B6%E6%95%B4%E7%90%86/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">vscode插件整理</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>在下AKK &copy; 2019 - 2020</span>
+            <span>
+                个人博客
+                <!-- 
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> -->
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://bluebookmarks.github.io/2020/01/12/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/&title=《使用hexo搭建博客》 — 书签&pic=https://bluebookmarks.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://bluebookmarks.github.io/2020/01/12/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/&title=《使用hexo搭建博客》 — 书签&source=心如花木，向阳而生" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://bluebookmarks.github.io/2020/01/12/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《使用hexo搭建博客》 — 书签&url=https://bluebookmarks.github.io/2020/01/12/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/&via=https://bluebookmarks.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://bluebookmarks.github.io/2020/01/12/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADJ0lEQVR42u3aQW7jMBAEwPz/0w6w142Ubg4DWHTpZDgyqaKADNjDr6/4ev277r///57km/vR7ue9v2fDhY2Njf0Q9uv2up8mufP+t5PP7ezY2NjYZ7MnxSkpIbvA7XNefo+NjY39kexkA7BWVK6Wtd3eYGNjY2Pn7HlWM5mrLXXY2NjYn8BuA6A2PLovSPnjtnNtyNKwsbGx357dNnrf+fMf9rexsbGx35L9GlxJnDRp1s7jqssnx8bGxj6I3QY6bdDTjpZvM/JxoiwNGxsb++HsXUH/2jK1Ld611kIRLWFjY2M/lp2XnPbozOTO/MXkoRg2Njb2Sez8CM6upL0tkHsP8fyQpWFjY2MfxN5VwPLQPz+m05a6qDGAjY2NfQS7babehzj5csznSoKqxfwMGxsb+1Hs9nBMMk1OakdrS1fU2cbGxsY+gp0cnWlbufMYqC2cxRJgY2NjH8eeDJQ3aHeFTe0xoMssDRsbG/sI9lpYv9YezktUvkDJ7NjY2NifyW4j+Hxb0ha8tsHcFjxsbGzsk9iT1m+7WJMgqaWulUBsbGzsp7Dbluquwzft5mctAvslS8PGxsY+lD2K2gf1Mwmh2gW63IpgY2NjH8TetVVoD+WsFci1BcLGxsY+m70Ga1uza4HR/Qij+AkbGxv7OPZaSJQ0U/O/zr/P78HGxsY+ib1GauOe4lE2RVfRZgkbGxv7CHZxcicobLuCp3mDOWJgY2NjH8qeBEaTApbHW8XRnLyAYWNjYz+c3bZg10paPvKk1CWvBBsbG/s89q7gpv3tfIOx+NqwsbGxD2IX//SXGGubkL9oQly+YGxsbOyHs1vq5OGS0H/SfshjMmxsbOyT2JMrCffb8Kh9AWvNaWxsbOyT2PPtRBvoJOFRW4TybQ82Njb2eex5uVorMJOwaW8shY2NjX0Ge2/zdW3TksdbyTjJ4SFsbGzs89h5GzUpVPk9axuYtTgJGxsbG7ttxCZbiHwjkcyeh03Y2NjYn8lOSlFboiZlLy9X2NjY2J/AbkOlPEjKj/XkpWtDuxobGxv7IPZaxN8e6GmbtW15W/sVNjY29sPZ33zC1JhhVc2xAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
