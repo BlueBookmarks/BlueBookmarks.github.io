@@ -20,21 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="hexo">
-    <meta name="description" content="那个男孩子不想拥有一个个人博客（还是免费的） 现在有很多第三方博客网站，掘金，简书，csdn等，今天就来搭建一个个人的博客网站，基于Github Page，国内可以通过码云，coding等网站托管，操作步骤大体相同。 目录 环境要求  安装Hexo  Github设置  配置 SSH key  部署到Github  写博客  图床推荐    环境要求需要 node 和 git 环境 node中文网">
+    <meta name="keywords" content="hexo,github">
+    <meta name="description" content="那个男孩子不想拥有一个个人博客（还是免费的） 现在有很多第三方博客网站，掘金，简书，csdn等，今天就来搭建一个个人的博客网站，基于Github Page，国内可以通过码云，coding等网站托管，操作步骤大体相同。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用hexo搭建博客">
 <meta property="og:url" content="https://bluebookmarks.github.io/2020/01/12/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/index.html">
 <meta property="og:site_name" content="书签">
-<meta property="og:description" content="那个男孩子不想拥有一个个人博客（还是免费的） 现在有很多第三方博客网站，掘金，简书，csdn等，今天就来搭建一个个人的博客网站，基于Github Page，国内可以通过码云，coding等网站托管，操作步骤大体相同。 目录 环境要求  安装Hexo  Github设置  配置 SSH key  部署到Github  写博客  图床推荐    环境要求需要 node 和 git 环境 node中文网">
+<meta property="og:description" content="那个男孩子不想拥有一个个人博客（还是免费的） 现在有很多第三方博客网站，掘金，简书，csdn等，今天就来搭建一个个人的博客网站，基于Github Page，国内可以通过码云，coding等网站托管，操作步骤大体相同。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s1.ax1x.com/2020/04/24/JB9IUg.png">
 <meta property="og:image" content="https://s1.ax1x.com/2020/04/24/JBAlHx.jpg">
 <meta property="og:image" content="https://s1.ax1x.com/2020/04/24/JBZPud.png">
 <meta property="article:published_time" content="2020-01-12T06:50:05.000Z">
-<meta property="article:modified_time" content="2020-04-24T06:20:38.277Z">
+<meta property="article:modified_time" content="2020-04-24T07:43:15.260Z">
 <meta property="article:author" content="在下AKK">
 <meta property="article:tag" content="hexo">
+<meta property="article:tag" content="github">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://s1.ax1x.com/2020/04/24/JB9IUg.png">
     
@@ -155,7 +156,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目录"><span class="post-toc-number">1.</span> <span class="post-toc-text">目录</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#环境要求"><span class="post-toc-number">2.</span> <span class="post-toc-text">环境要求</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装Hexo"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装Hexo</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Github设置"><span class="post-toc-number">4.</span> <span class="post-toc-text">Github设置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置-SSH-key"><span class="post-toc-number">5.</span> <span class="post-toc-text">配置 SSH key</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#部署到Github"><span class="post-toc-number">6.</span> <span class="post-toc-text">部署到Github</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#写博客"><span class="post-toc-number">7.</span> <span class="post-toc-text">写博客</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目录"><span class="post-toc-number">1.</span> <span class="post-toc-text">目录</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#环境要求"><span class="post-toc-number">2.</span> <span class="post-toc-text">环境要求</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装Hexo"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装Hexo</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Github设置"><span class="post-toc-number">4.</span> <span class="post-toc-text">Github设置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置-SSH-key"><span class="post-toc-number">5.</span> <span class="post-toc-text">配置 SSH key</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#部署到Github"><span class="post-toc-number">6.</span> <span class="post-toc-text">部署到Github</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#写博客"><span class="post-toc-number">7.</span> <span class="post-toc-text">写博客</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#图床推荐"><span class="post-toc-number">8.</span> <span class="post-toc-text">图床推荐</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#接入腾讯公益404"><span class="post-toc-number">9.</span> <span class="post-toc-text">接入腾讯公益404</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#结束语"><span class="post-toc-number">10.</span> <span class="post-toc-text">结束语</span></a></li></ol>
         </nav>
     </aside>
 
@@ -181,6 +182,8 @@
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>那个男孩子不想拥有一个个人博客（还是免费的）</p>
 <p>现在有很多第三方博客网站，掘金，简书，csdn等，今天就来搭建一个个人的博客网站，基于Github Page，国内可以通过码云，coding等网站托管，操作步骤大体相同。</p>
+<a id="more"></a>
+
 <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ol>
 <li><p><a href="#环境要求">环境要求</a></p>
 </li>
@@ -195,6 +198,8 @@
 <li><p><a href="#写博客">写博客</a></p>
 </li>
 <li><p><a href="#图床推荐">图床推荐</a></p>
+</li>
+<li><p><a href="#接入腾讯公益404">接入腾讯公益404</a></p>
 </li>
 </ol>
 <hr>
@@ -263,16 +268,46 @@
 </li>
 </ol>
 <h2 id="写博客"><a href="#写博客" class="headerlink" title="写博客"></a>写博客</h2><p>官网写作文档 <a href="https://hexo.io/zh-cn/docs/writing" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/writing</a></p>
+<p>如果你不会 <code>markdown</code> 的书写，请先阅读 <a href="https://www.runoob.com/markdown/md-tutorial.html" target="_blank" rel="noopener">菜鸟教程 | Markdown 教程</a></p>
 <ol>
 <li><p>新建文章</p>
 <p> <code>hexo new &#39;文章标题&#39;</code></p>
 </li>
 <li><p>文章目录</p>
 <p> 新建的文章在 <code>/source/_posts</code> 中查看到</p>
-</li>
-</ol>
 <p>本地运行查看</p>
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p>就可以看到你写的博客</p>
+<p>最后，部署项目</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+
+<p>运行 <code>hexo clean</code> 为了清除缓存文件和已生成的静态文件，尤其是更换主题后需要执行一次</p>
+</li>
+</ol>
+<h2 id="图床推荐"><a href="#图床推荐" class="headerlink" title="图床推荐"></a>图床推荐</h2><p>上传到图床后可以直接到md文件中引用</p>
+<p>(转载自知乎：<a href="https://zhuanlan.zhihu.com/p/35270383?ivk_sa=1023345p" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/35270383?ivk_sa=1023345p</a>)</p>
+<p>选几个我常用的来列举，上面链接里有更多的图床介绍</p>
+<ol>
+<li><p><a href="https://portal.qiniu.com" target="_blank" rel="noopener">七牛云</a></p>
+<p> 注册认证后有10G永久免费空间，每月10G国内和10G国外流量，速度相当快，七牛云是国内专业CDN服务商，插件支持比较多，有免费ssl证书，但https流量收费</p>
+<p> 注意：七牛云30天后会回收测试域名，因此你必须要绑定自己的已备案的域名</p>
+</li>
+<li><p><a href="http://sbimg.cn" target="_blank" rel="noopener">公益图床</a></p>
+<p> 长期保存需要注册使用，这个图床服务器在国内应该还用了cdn，总之速度非常快</p>
+</li>
+<li><p><a href="https://imgchr.com" target="_blank" rel="noopener">路过图床</a></p>
+<p> 支持免注册上传图片，永久存储，支持HTTPS加密访问和调用图片，提供多种图片链接格式，成立于2011年</p>
+<p> 限制：最大10M</p>
+</li>
+<li><p><a href="https://www.superbed.cn" target="_blank" rel="noopener">聚合图床</a></p>
+<p> 将图片分发到多处备份，借助其本身的CDN加速功能，节省服务器流量，并且不用担心图片被删除，即便其中某几个图床上的图片被删除了，还有其他备份，保证万无一失，支持匿名和注册管理</p>
+</li>
+</ol>
+<h2 id="接入腾讯公益404"><a href="#接入腾讯公益404" class="headerlink" title="接入腾讯公益404"></a>接入腾讯公益404</h2><p>公益404网站 <a href="https://www.qq.com/404/" target="_blank" rel="noopener">https://www.qq.com/404/</a></p>
+<p>在 <code>/source</code> 根目录下建立 <code>404.html</code></p>
+<p>接入公益404JS文件，修改跳转到自己的博客主页</p>
+<h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><p>到这一个基本框架的博客就搭建好了，想要自己想要的功能和主题可以阅读Hexo的官方文档来修改和定制。</p>
 
         </div>
 
@@ -281,7 +316,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2020-04-24T06:20:38.277Z" itemprop="dateUpdated">2020-04-24 14:20:38</time>
+    最后更新时间：<time datetime="2020-04-24T07:43:15.260Z" itemprop="dateUpdated">2020-04-24 15:43:15</time>
 </span><br>
 
 
@@ -307,7 +342,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li></ul>
 
 
             
@@ -327,7 +362,8 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://bluebookmarks.github.io/2020/01/12/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/&title=《使用hexo搭建博客》 — 书签&source=心如花木，向阳而生" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://bluebookmarks.github.io/2020/01/12/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/&title=《使用hexo搭建博客》 — 书签&source=那个男孩子不想拥有一个个人博客（还是免费的）
+现在有很多第三方博客网站，掘金，简书，csdn等，今天就来搭建一个个人的博客网站，基于Github Page..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -362,7 +398,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2020/04/25/create-react-app%E4%B8%AD%E4%BD%BF%E7%94%A8typescript/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">create-react-app中使用typescript</h4>
+      </a>
+    </div>
   
 
   
@@ -480,7 +523,8 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://bluebookmarks.github.io/2020/01/12/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/&title=《使用hexo搭建博客》 — 书签&source=心如花木，向阳而生" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://bluebookmarks.github.io/2020/01/12/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/&title=《使用hexo搭建博客》 — 书签&source=那个男孩子不想拥有一个个人博客（还是免费的）
+现在有很多第三方博客网站，掘金，简书，csdn等，今天就来搭建一个个人的博客网站，基于Github Page..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
